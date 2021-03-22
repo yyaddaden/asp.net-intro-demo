@@ -1,0 +1,60 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Conversion";
+}
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model temperature_converter_app.Models.Conversion
+
+<div class="jumbotron">
+  <h1>Page de conversion</h1>
+  <div class="lead">
+    <form method="POST" asp-action="Convert">
+      <div class="form-group row">
+        <div class="col-sm-3">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              value="C"
+              asp-for="OutputMetric"
+            />
+            <label asp-for="OutputMetric" class="form-check-label">Celsius</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              value="F"
+              asp-for="OutputMetric"
+            />
+            <label asp-for="OutputMetric" class="form-check-label">Fahrenheit</label>
+          </div>
+          <span asp-validation-for="OutputMetric" class="text-danger"></span>
+        </div>
+      </div>
+
+      <div class="form-group row">
+          <div class="col-sm-3">
+              <input type="number"
+                     class="form-control"
+                     placeholder="Entrer une valeur ..."
+                     asp-for="InputValue" />
+              <span asp-validation-for="InputValue" class="text-danger"></span>
+          </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-sm-3">
+          <button type="submit" class="btn btn-success btn-block sm-3">
+            Convertir
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
