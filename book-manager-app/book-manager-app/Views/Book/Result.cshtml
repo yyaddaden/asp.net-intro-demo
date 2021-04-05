@@ -8,13 +8,14 @@
     ViewBag.Title = "Result";
 }
 
-@model List<book_manager_app.Models.Book>
+@using book_manager_app.Models;
+@model List<Book>
 
 @foreach (book_manager_app.Models.Book book in Model)
 {
     <partial name="_Book" model=book />
 }
 
-<br/>
+<br />
 
 <a class="btn btn-primary" href="/Book/Add" role="button">Previous page</a>
