@@ -6,10 +6,13 @@
     ViewBag.Title = "Résultat";
 }
 
-@model temperature_converter_app.Models.Conversion
+@using temperature_converter_app.Models
+@model Conversion
 
 <div class="jumbotron">
     <h1>Page de résultat</h1>
+    <br />
+
     <div class="lead">
         En convertissant
         <span class="badge badge-secondary">
@@ -17,7 +20,7 @@
         </span>
         , on obtient
         <span class="badge badge-success">
-            @Model.OutputValue °@Model.OutputMetric
+            @String.Format("{0:0.00}", @Model.OutputValue) °@Model.OutputMetric
         </span>
     </div>
     <hr />
