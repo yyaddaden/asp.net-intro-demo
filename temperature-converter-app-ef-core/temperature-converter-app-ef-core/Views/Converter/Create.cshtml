@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Nouvel utilisateur";
+}
+
+@using temperature_converter_app_ef_core.Models;
+@model User
+
+<div class="jumbotron">
+    <h1>Nouvel utilisateur</h1>
+    <br />
+
+    <div class="lead">
+        L'utilisateur <span class="badge badge-success">@Model.Name</span> a été créé avec succès.
+    </div>
+    <hr />
+    <a class="btn btn-primary" href="/Converter/ConvertOrAddUser" role="button">Retour</a>
+</div>
