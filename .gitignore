@@ -351,3 +351,6 @@ MigrationBackup/
 
 # lib folder
 lib/
+
+# Migrations folder
+Migrations/
