@@ -1,31 +1,34 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
+using temperature_converter_app_ef_core.Models;
 
-namespace task_manager_rest_api.Controllers
+namespace temperature_converter_rest_api.Controllers
 {
     [Produces("application/json")]
     [Route("api/Users")]
     [ApiController]
     public class UserController : ControllerBase
     {
-        private Models.TaskManagerDbContext _context;
+        private TemperatureConverterDbContext _context;
 
         public UserController()
         {
-            _context = new Models.TaskManagerDbContext();
+            _context = new TemperatureConverterDbContext();
         }
 
         [HttpGet]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(List<User>), (int)HttpStatusCode.OK)]
         public IActionResult GetUsers()
         {
             try
             {
-                List<Models.User> users = _context.Users.ToList();
+                List<User> users = _context.Users.ToList();
                 return Ok(users);
             }
             catch (Exception) { }
@@ -36,12 +39,12 @@ namespace task_manager_rest_api.Controllers
         [HttpGet("{userId}", Name = "GetUser")]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(User), (int)HttpStatusCode.OK)]
         public IActionResult GetUser(int userId)
         {
             try
             {
-                Models.User user = _context.Users.Find(userId);
+                User user = _context.Users.Find(userId);
                 if (user != null)
                     return Ok(user);
                 else
@@ -53,13 +56,13 @@ namespace task_manager_rest_api.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(typeof(Models.UserModel), (int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Created)]
         public IActionResult AddUser([FromBody] Models.UserModel model)
         {
             try
             {
-                Models.User user = new Models.User()
+                User user = new User()
                 {
                     Name = model.Name,
                 };
@@ -67,29 +70,6 @@ namespace task_manager_rest_api.Controllers
                 _context.SaveChanges();
                 return CreatedAtAction(nameof(GetUser), new { userId = user.UserId }, user);
 
-            }
-            catch (Exception) { }
-
-            return BadRequest();
-        }
-
-        [HttpDelete("{userId}")]
-        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
-        public IActionResult RemoveUser(int userId)
-        {
-            try
-            {
-                Models.User user = _context.Users.Find(userId);
-                if (user != null)
-                {
-                    _context.Remove(user);
-                    _context.SaveChanges();
-                    return Ok();
-                }
-                else
-                    return StatusCode((int)HttpStatusCode.NotFound);
             }
             catch (Exception) { }
 
