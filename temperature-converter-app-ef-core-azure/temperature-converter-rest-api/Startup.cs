@@ -25,7 +25,8 @@ namespace temperature_converter_rest_api
             });
             services.AddDbContext<TemperatureConverterDbContext>(options =>
             {
-                options.UseSqlServer(Configuration["Data:ConnectionStrings:DefaultConnection"]);
+                // options.UseSqlServer(Configuration["Data:ConnectionStrings:DefaultConnection"]);
+                options.UseSqlServer(Configuration["Data:ConnectionStrings:AzureDbConnectionString"]);
             });
 
             services.AddSwaggerGen();
@@ -39,8 +40,11 @@ namespace temperature_converter_rest_api
             app.UseSwagger();
             app.UseSwaggerUI(config =>
             {
+                config.RoutePrefix = "";
                 config.SwaggerEndpoint("/swagger/v1/swagger.json", "Temperature Converter Rest API V1.0");
             });
+
+
         }
     }
 }

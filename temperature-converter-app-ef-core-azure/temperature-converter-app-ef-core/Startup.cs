@@ -20,7 +20,8 @@ namespace temperature_converter_app_ef_core
             services.AddMvc(option => option.EnableEndpointRouting = false);
             services.AddDbContext<Models.TemperatureConverterDbContext>(options =>
             {
-                options.UseSqlServer(Configuration["Data:ConnectionStrings:DefaultConnection"]);
+                // options.UseSqlServer(Configuration["Data:ConnectionStrings:DefaultConnection"]);
+                options.UseSqlServer(Configuration["Data:ConnectionStrings:AzureDbConnectionString"]);
             });
         }
 
