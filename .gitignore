@@ -354,3 +354,6 @@ lib/
 
 # Migrations folder
 Migrations/
+
+# Other
+temperature-converter-app-ef-core-azure
