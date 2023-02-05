@@ -1,20 +1,23 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="fr">
 <head>
-    <meta charset="utf-8" />
-    <link href="~/css/site.min.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="~/js/site.min.js"></script>
+    <link href="~/css/site.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <h1>@ViewBag.Title Page</h1>
-
-    @RenderBody()
+    <div style="width: 80%;" class="container-fluid mt-5 mb-5">
+        <div class="card">
+            <div class="card-header">
+                <h5>@ViewBag.Title</h5>
+            </div>
+            <div class="card-body">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,15 +1,21 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model seance_04_exercice_01.Models.Book
 
-@using book_manager_app.Models;
-@model Book
-
-<div class="card" style="width: 18rem;">
+<div class="card mb-2">
     <div class="card-body">
-        <h5 class="card-title">@Model.Title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">@Model.NumberOfVolumes volumes</h6>
+        <div class="container">
+            <div class="row">
+                <div class="row">
+                    <div class="col">
+                        <img width="100" src="~/img/@Model.ImageCover">
+                    </div>
+                    <div class="col">
+                        <h3>Informations : </h3>
+                        <b><i class="bi bi-book-fill"></i> Titre :</b> @Model.Title <br />
+                        <b><i class="bi bi-person-fill"></i> Auteur :</b> @Model.Author <br />
+                        <b><i class="bi bi-pencil-fill"></i> Éditeur :</b> @Model.Editor
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div> 
+</div>

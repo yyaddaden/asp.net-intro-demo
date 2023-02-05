@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31129.286
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "book-manager-app", "book-manager-app\book-manager-app.csproj", "{B12DA2AA-41D7-4FED-BD5C-536FEB930946}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "book-manager-app", "book-manager-app\book-manager-app.csproj", "{055557A1-CEBC-43E3-8873-E1340CDEB59C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B12DA2AA-41D7-4FED-BD5C-536FEB930946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B12DA2AA-41D7-4FED-BD5C-536FEB930946}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B12DA2AA-41D7-4FED-BD5C-536FEB930946}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B12DA2AA-41D7-4FED-BD5C-536FEB930946}.Release|Any CPU.Build.0 = Release|Any CPU
+		{055557A1-CEBC-43E3-8873-E1340CDEB59C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{055557A1-CEBC-43E3-8873-E1340CDEB59C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{055557A1-CEBC-43E3-8873-E1340CDEB59C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{055557A1-CEBC-43E3-8873-E1340CDEB59C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4DC2C2DE-B580-48C7-8BDE-BAA347722B52}
+		SolutionGuid = {752231B8-B433-4AA4-B170-6F8848CE5CA9}
 	EndGlobalSection
 EndGlobal

@@ -9,17 +9,16 @@
 @using temperature_converter_app.Models
 @model Conversion
 
-<div class="jumbotron">
-    <h1>Page de résultat</h1>
-    <br />
+<div class="container-fluid bg-light p-5 container-sm">
+    <h1 class="mb-3">Page de résultat</h1>
 
     <div class="lead">
         En convertissant
-        <span class="badge badge-secondary">
+        <span class="badge bg-primary">
             @Model.InputValue °@Model.InputMetric
         </span>
         , on obtient
-        <span class="badge badge-success">
+        <span class="badge bg-success">
             @String.Format("{0:0.00}", @Model.OutputValue) °@Model.OutputMetric
         </span>
     </div>

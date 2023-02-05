@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace book_manager_app.Models
+﻿namespace seance_04_exercice_01.Models
 {
     public class Book
-    {   
-        [Required(ErrorMessage = "Champs requis !")]
-        public string Title { get; set; }
-
-        [Required(ErrorMessage = "Champs requis !")]
-        public int? NumberOfVolumes { get; set; }
+    {
+        public string Title { get; set; } = "";
+        public string Author { get; set; } = "";
+        public string Editor { get; set; } = "";
+        public string ImageCover { get; set; } = "";
     }
 }
