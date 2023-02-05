@@ -1,0 +1,18 @@
+[
+  // fichiers CSS
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [ "wwwroot/lib/twitter-bootstrap/css/bootstrap.css" ],
+    "minify": { "enabled": true }
+  },
+
+   //fichier JS
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/lib/twitter-bootstrap/js/bootstrap.js",
+      "wwwroot/lib/jquery/jquery.js"
+    ],
+    "minify": { "enabled": true }
+  }
+]

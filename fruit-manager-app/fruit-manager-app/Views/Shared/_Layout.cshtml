@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/site.min.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="~/">Démonstration ASP.NET - MVC</a>
+        
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="~/home/index">Produits</a>
+            <a class="nav-item nav-link" href="~/home/addproduct">Ajouter</a>
+            <a class="nav-item nav-link" href="~/home/contact">Contact</a>
+        </div>
+        </div>
+    </nav>
+    <div class="container-fluid p-5 w-100">
+        @RenderBody()
+    </div>
+</body>
+</html>

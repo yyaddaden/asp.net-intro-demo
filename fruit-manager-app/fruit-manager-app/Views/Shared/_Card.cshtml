@@ -1,0 +1,16 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model DemoAspNet.Models.Product
+
+<div class="card">
+  <div class="card-body">
+        <h5 class="card-title">@Model.Title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">@Model.Country</h6>
+        <p>@Model.Description</p>
+    <a class="btn btn-success" href="#" role="button">Plus de détails</a>
+  </div>
+</div>
