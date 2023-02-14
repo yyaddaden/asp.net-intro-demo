@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model DemoAspNet.Models.User
+
+<h1 class="pb-3">Ajouter un utilisateur</h1>
+
+<form asp-action="AddUser">
+    <div class="form-group">
+        <label class="form-label" asp-for="UserName">Identifiant de l'utilisateur</label>
+        <input class="form-control" type="text" asp-for="UserName" />
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
+</form>

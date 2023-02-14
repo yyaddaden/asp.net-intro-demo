@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model DemoAspNet.Models.AddProduct
+
+<h1 class="pb-3">Ajouter un produit</h1>
+
+<form asp-action="AddProduct">
+    <div class="form-group">
+        <label class="form-label" asp-for="Product.Title">Titre du produit</label>
+        <input class="form-control" type="text" asp-for="Product.Title" />
+        <span asp-validation-for="Product.Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" asp-for="Product.Country">Pays d'origine</label>
+        <input class="form-control" type="text" asp-for="Product.Country" />
+        <span asp-validation-for="Product.Country" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" asp-for="UserId">Utilisateur</label>
+        <select class="form-select" asp-for="UserId">
+            <option value="">Sélectionner ...</option>
+
+            @foreach (var user in Model.Users)
+            {
+                <option value="@user.UserId">@user.UserName</option>
+            }
+        </select>
+        <span asp-validation-for="UserId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" asp-for="Product.Description">Une petite description</label>
+        <textarea class="form-control" type="text" asp-for="Product.Description"></textarea>
+        <span asp-validation-for="Product.Description" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
+</form>

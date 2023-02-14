@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_Layout";
+    ViewBag.Title = ViewBag.Title;
+}
+
+@model List<DemoAspNet.Models.Product>
+
+<h1 class="pb-3">Page des produits</h1>
+
+<div class="row">
+    @foreach (DemoAspNet.Models.Product product in Model)
+    {
+        <div class="col-4 mt-3">
+            <partial name="_Card" model="product" />
+        </div>
+    }
+</div>
