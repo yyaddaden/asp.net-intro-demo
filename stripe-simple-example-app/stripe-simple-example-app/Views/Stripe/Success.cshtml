@@ -16,6 +16,10 @@
             <b>Super !</b> Le processus de paiement s'est effectué avec succès.
         </div>
 
+        <div class="alert alert-info" role="alert">
+            <b>Client :</b> @ViewBag.Name | <b>Total Payé:</b> @ViewBag.AmountPaid
+        </div>
+
         <a class="btn btn-primary" href="~/Stripe/Cart"><i class="fa-solid fa-angle-left"></i> Retour vers le panier</a>
     </div>
 </div>

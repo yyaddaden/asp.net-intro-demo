@@ -45,17 +45,18 @@ namespace stripe_simple_example_app.Controllers
                 if(totalAmount == 0)
                     return View(_cart);
                 else
-                    return RedirectToAction("Invoice", new { _totalAmount = totalAmount });
+                    return RedirectToAction("Invoice", new { _totalAmount = totalAmount, _name = _cart.Name });
             }
             
             return View(_cart);
         }
 
         [HttpGet]
-        public IActionResult Invoice(long _totalAmount)
+        public IActionResult Invoice(long _totalAmount, string _name)
         {
             ViewBag.TotalAmount = _totalAmount;
             ViewBag.TotalAmountStripe = _totalAmount * 100;
+            ViewBag.Name = _name;
             return View();
         }
 
@@ -66,7 +67,7 @@ namespace stripe_simple_example_app.Controllers
             CustomerCreateOptions optionsCustomer = new CustomerCreateOptions
             {
                 Email = stripeEmail,
-                Name = this.cart.Name,
+                Name = Request.Form["name"],
             };
 
             CustomerService serviceCustomer = new CustomerService();
@@ -89,7 +90,7 @@ namespace stripe_simple_example_app.Controllers
             if (charge.Status == "succeeded")
             {
                 string BalanceTransactionId = charge.BalanceTransactionId;
-                ViewBag.AmountPaid = charge.Amount;
+                ViewBag.AmountPaid = charge.Amount / 100;
                 ViewBag.BalanceTxId = BalanceTransactionId;
                 ViewBag.Customer = customer.Name;
 

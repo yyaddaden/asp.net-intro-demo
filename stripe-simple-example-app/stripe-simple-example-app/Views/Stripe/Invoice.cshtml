@@ -32,6 +32,7 @@
                 document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
             </script>
             <input type="hidden" name="amount" value="@ViewBag.TotalAmount" />
+            <input type="hidden" name="name" value="@ViewBag.Name" />
             <button type="submit" class="btn btn-success"><i class="fa-regular fa-credit-card"></i> Payer !</button>
         </form>
     </div>
