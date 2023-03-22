@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stripe-simple-example-app", "stripe-simple-example-app\stripe-simple-example-app.csproj", "{6043D562-5E1D-4691-BADB-1F62CBE1F2E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6043D562-5E1D-4691-BADB-1F62CBE1F2E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6043D562-5E1D-4691-BADB-1F62CBE1F2E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6043D562-5E1D-4691-BADB-1F62CBE1F2E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6043D562-5E1D-4691-BADB-1F62CBE1F2E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26AA4272-DC91-4E0E-88E4-F6ACE5BFD290}
+	EndGlobalSection
+EndGlobal

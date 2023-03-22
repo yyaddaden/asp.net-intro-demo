@@ -1,0 +1,21 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Succès !";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3>Résultat</h3>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-success" role="alert">
+            <b>Super !</b> Le processus de paiement s'est effectué avec succès.
+        </div>
+
+        <a class="btn btn-primary" href="~/Stripe/Cart"><i class="fa-solid fa-angle-left"></i> Retour vers le panier</a>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Facture";
+}
+
+@using Microsoft.Extensions.Options
+@inject IOptions<stripe_simple_example_app.StripeSettings> Stripe
+
+<div class="card">
+    <div class="card-header">
+        <h3>Facture</h3>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-primary" role="alert">
+            Le total du montant à payer est de : <b>@ViewBag.TotalAmount $ CA</b>
+        </div>
+
+        <form asp-action="Processing" asp-controller="Stripe" method="post">
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="@Stripe.Value.PublicKey"
+                    data-amount="@ViewBag.TotalAmountStripe"
+                    data-description="IT Store !"
+                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                    data-locale="fr"
+                    data-zip-code="false"
+                    data-label="Payer !">
+            </script>
+            <script>
+                document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+            </script>
+            <input type="hidden" name="amount" value="@ViewBag.TotalAmount" />
+            <button type="submit" class="btn btn-success"><i class="fa-regular fa-credit-card"></i> Payer !</button>
+        </form>
+    </div>
+</div>
