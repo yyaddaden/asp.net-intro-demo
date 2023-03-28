@@ -91,6 +91,7 @@ namespace DemoAspNet.Controllers
         }
 
         [HttpGet]
+        [ApiExplorerSettings(IgnoreApi = true)]
         [Route("Home/RemoveProduct/{productId:int}")]
         public IActionResult RemoveProduct(int productId)
         {
